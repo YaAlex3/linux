@@ -4463,11 +4463,39 @@ static const struct panel_desc arm_rtsm = {
 	},
 	.bus_format = MEDIA_BUS_FMT_RGB888_1X24,
 };
+/*
+static const struct drm_display_mode ionik_1200qc_display_mode = {
+    .clock = 65000,                    // pclk_khz (FEX: lcd_dclk_freq * 1000)
+    .hdisplay = 1024,                   // x (FEX: lcd_x)
+    .hsync_start = 1024 + 20,          // x + ri
+    .hsync_end = 1024 + 20 + 20,        // x + ri + hs
+    .htotal = 1024 + 20 + 20 + 280,     // x + ri + hs + le (FEX: lcd_ht)
+    .vdisplay = 768,                    // y (FEX: lcd_y)
+    .vsync_start = 768 + 8,            // y + lo
+    .vsync_end = 768 + 8 + 8,          // y + lo + vs
+    .vtotal = 768 + 8 + 8 + 22,        // y + lo + vs + up (FEX: lcd_vt / 2)
+    .vrefresh = 60,  // 
+};
+
+static const struct panel_desc ionik_1200qc_display = {
+    .modes = &ionik_1200qc_display_mode,
+    .num_modes = 1,
+    .bpc = 6,
+    .size = {
+        .width = 163,
+        .height = 122,
+    },
+    .connector_type = DRM_MODE_CONNECTOR_LVDS,
+};
+*/
 
 static const struct of_device_id platform_of_match[] = {
 	{
 		.compatible = "ampire,am-1280800n3tzqw-t00h",
 		.data = &ampire_am_1280800n3tzqw_t00h,
+//    }, {
+//        .compatible = "ionik,ionik_1200qc_display",
+//        .data = &ionik_1200qc_display,
 	}, {
 		.compatible = "ampire,am-480272h3tmqw-t01h",
 		.data = &ampire_am_480272h3tmqw_t01h,
